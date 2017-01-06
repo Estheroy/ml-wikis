@@ -1,0 +1,16 @@
+[
+	{
+		"author": "Yifan Xu",
+		"category": "general",
+		"name": "What is Machine Learning",
+		"difficulty": "easy",
+		"time": "1-2 weeks"
+	},
+	{
+		"author": "Yifan Xu",
+		"category": "supervised",
+		"name": "What is Deep Learning",
+		"difficulty": "medium",
+		"time": "1-2 weeks"
+	}
+]
