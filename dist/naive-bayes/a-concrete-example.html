@@ -1,0 +1,359 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>A Concrete Example · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="extensions.html" />
+    
+    
+    <link rel="prev" href="the-formal-naive-bayes-model.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="what-is-the-naive-bayes-classifier.html">
+            
+                <a href="what-is-the-naive-bayes-classifier.html">
+            
+                    
+                    What is the Naive Bayes Classifier?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="how-it-works.html">
+            
+                <a href="how-it-works.html">
+            
+                    
+                    How it works?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="likelihood-inference.html">
+            
+                <a href="likelihood-inference.html">
+            
+                    
+                    Likelihood Inference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="pros-and-cons.html">
+            
+                <a href="pros-and-cons.html">
+            
+                    
+                    Pros and Cons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="the-formal-naive-bayes-model.html">
+            
+                <a href="the-formal-naive-bayes-model.html">
+            
+                    
+                    The Formal Naive Bayes Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="a-concrete-example.html">
+            
+                <a href="a-concrete-example.html">
+            
+                    
+                    A Concrete Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="extensions.html">
+            
+                <a href="extensions.html">
+            
+                    
+                    Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >A Concrete Example</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="a-concrete-example">A Concrete Example</h2>
+<p>To demonstrate the concept of na&#xEF;ve Bayes classification, consider the example displayed in the illustration above. As indicated, the points can be classified as either G for green, or R for red. Our task is to classify new cases based on the statistics of this set.</p>
+<p>Since there are twice as many G points as R, it is reasonable to believe that a new case (which hasn&apos;t been observed yet) is twice as likely to be green rather than red. In a Bayesian analysis, this is expressed by the prior probability.</p>
+<p>Thus, we can write:</p>
+<p><script type="math/tex; ">Prior\quad probability\quad for\quad GREEN \propto \frac{Number\quad of\quad GREEN\quad objects}{Total\quad number\quad of\quad objects}</script></p>
+<p><script type="math/tex; ">Prior\quad probability\quad for\quad RED \propto \frac{Number\quad of\quad RED\quad objects}{Total\quad number\quad of\quad objects}</script></p>
+<p>Since there is a total of 60 objects, 40 of which are GREEN and 20 RED, our prior probabilities for class membership are:</p>
+<p><script type="math/tex; ">Prior\quad probability\quad for\quad GREEN \propto \frac{40}{60}</script></p>
+<p><script type="math/tex; ">Prior\quad probability\quad for\quad RED \propto \frac{20}{60}</script></p>
+<p>Having formulated our prior probability, we are now ready to classify a new object (the white circle). Since the objects are well clustered, it is reasonable to assume that the more G (or R) objects in the vicinity of X, the more likely that the new cases belong to that particular color. For this case, we will model the likelihood with a <strong>KNN</strong>-like probability measure. To measure this likelihood, we draw a circle around X which encompasses a user chosen number of points. Then we calculate percentage of these points in each class label. From this we calculate the likelihood:</p>
+<p><script type="math/tex; ">Likelihood\quad of\quad X\quad given\quad GREEN \propto \frac{Number\quad of\quad GREEN\quad in\quad the\quad vicinity\quad of\quad X}{Total\quad number\quad of\quad GREEN\quad cases}</script></p>
+<p><script type="math/tex; ">Likelihood\quad of\quad X\quad given\quad RED \propto \frac{Number\quad of\quad RED\quad in\quad the\quad vicinity\quad of\quad X}{Total\quad number\quad of\quad RED\quad cases}</script></p>
+<p>From the illustration above, it is clear that Likelihood of X given GREEN is smaller than Likelihood of X given RED, since the circle encompasses 1 GREEN object and 3 RED ones. Thus:</p>
+<p><script type="math/tex; ">Likelihood\quad of\quad X\quad given\quad GREEN = \frac{1}{4}</script></p>
+<p><script type="math/tex; ">Likelihood\quad of\quad X\quad given\quad RED = \frac{3}{4}</script></p>
+<p>Although the prior probabilities suggest that X may belong to GREEN the likelihoods suggest otherwise. Bayes theorem allows us to weight both of these together. The final classification is given by:</p>
+<p><script type="math/tex; ">Posterior\quad of\quad RED\quad given\quad X = \frac{3}{4} * \frac{1}{3} = \frac{1}{4}</script></p>
+<p><script type="math/tex; ">Posterior\quad of\quad GREEN\quad given\quad X = \frac{1}{4} * \frac{2}{3} = \frac{1}{6}</script></p>
+<p>Finally, we classify X as RED since it has the larger posterior given X.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="the-formal-naive-bayes-model.html" class="navigation navigation-prev " aria-label="Previous page: The Formal Naive Bayes Model">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="extensions.html" class="navigation navigation-next " aria-label="Next page: Extensions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"A Concrete Example","level":"1.7","depth":1,"next":{"title":"Extensions","level":"1.8","depth":1,"path":"extensions.md","ref":"extensions.md","articles":[]},"previous":{"title":"The Formal Naive Bayes Model","level":"1.6","depth":1,"path":"the-formal-naive-bayes-model.md","ref":"the-formal-naive-bayes-model.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["autocover","mathjax","disqus"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"ai-master"},"search":{},"autocover":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"a-concrete-example.md","mtime":"2017-03-06T08:53:32.282Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-06T08:55:58.253Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

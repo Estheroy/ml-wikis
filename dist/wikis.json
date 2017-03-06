@@ -1,0 +1,42 @@
+[
+	{
+		"category": "machine",
+		"name": "Intro to Machine Learning"
+	},
+	{
+		"category": "machine",
+		"name": "k-means"
+	},
+	{
+		"category": "machine",
+		"name": "KNN" 
+	},
+	{
+		"category": "machine",
+		"name": "Linear Regression"
+	},
+	{
+		"category": "machine",
+		"name": "Logistic Regression"
+	},
+	{
+		"category": "deep",
+		"name": "LSTM"
+	},
+	{
+		"category": "machine",
+		"name": "Naive Bayes"
+	},
+	{
+		"category": "math",
+		"name": "Optimization and Training for parametrics classifers"
+	},
+	{
+		"category": "machine",
+		"name": "PCA"
+	},
+	{
+		"category": "deep",
+		"name": "Recurrent Neural Network"
+	}
+]

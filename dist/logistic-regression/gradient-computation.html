@@ -1,0 +1,355 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Gradient Computation · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="training.html" />
+    
+    
+    <link rel="prev" href="cost-function.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Abstract
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    What is Logistic Regression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="sigmoid-function.html">
+            
+                <a href="sigmoid-function.html">
+            
+                    
+                    Sigmoid Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="weights.html">
+            
+                <a href="weights.html">
+            
+                    
+                    Weights
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="cost-function.html">
+            
+                <a href="cost-function.html">
+            
+                    
+                    Cost Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="gradient-computation.html">
+            
+                <a href="gradient-computation.html">
+            
+                    
+                    Gradient Computation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="training.html">
+            
+                <a href="training.html">
+            
+                    
+                    Training
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Gradient Computation</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="gradient-computation">Gradient Computation</h2>
+<p>The computation of the gradient of cross entropy loss function is very simple and elegant. First, we apply the chain rule here:
+<script type="math/tex; mode=display">
+\begin{eqnarray*}
+\frac{\partial J(w)}{\partial w_j}&=&\frac{\partial J(\theta)}{\partial h_{\theta}(z)}*
+\frac{\partial h_{\theta}(z)}{\partial z}*\frac{\partial x}{\partial w_j}
+\end{eqnarray*}
+</script>
+where <script type="math/tex; ">\sigma(z)=h_{\theta}(x)=\frac{1}{1+e^{-z}}</script> and <script type="math/tex; ">z=w\cdot x</script>.</p>
+<p>The derivative of <script type="math/tex; ">J(\theta)</script> with respect to <script type="math/tex; ">h_{\theta}(z)</script> is just:
+<script type="math/tex; mode=display">
+\frac{y^{(i)}}{h_{\theta}(z)}+\frac{y^{(i)}-1}{1-h_{\theta}(z)}
+</script>
+The derivative of the sigmoid function, <script type="math/tex; ">h_{\theta}(z)=\frac{1}{1+e^{-z}}</script> with
+respect to z is just <script type="math/tex; ">(1-h_{\theta}(z))h_{\theta}(z)</script></p>
+<p>The derivative of z, the dot product, with respect to any weight <script type="math/tex; ">w_j</script> is just <script type="math/tex; ">x_j</script>
+So put those three above derivatives in the chain rule:
+<script type="math/tex; mode=display">
+\begin{eqnarray*}
+=\left(\frac{y^{(i)}}{h_{\theta}(x)}+\frac{1-y^{(i)}}{1-h_{\theta}(x)}\right)(1-h_{\theta}(x))h_{\theta}(x)*x\\
+=(y^{(i)}*(1-h_{\theta}(x))+(1-y^{(i)})*h_{\theta}(x))*x\\
+=(h_{\theta}(x)-y^{(i)})*x
+\end{eqnarray*}
+</script></p>
+<p>Adding the summation over all the data samples, the derivative of the error with respect to any weight <script type="math/tex; ">w_j</script> is:</p>
+<p><script type="math/tex; mode=display">
+\frac{\partial J(w)}{\partial w_j}=\sum^n_{i=1}x^{(i)}_j(h(x^{(i)})-y^{(i)})
+</script></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="cost-function.html" class="navigation navigation-prev " aria-label="Previous page: Cost Function">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="training.html" class="navigation navigation-next " aria-label="Next page: Training">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Gradient Computation","level":"1.6","depth":1,"next":{"title":"Training","level":"1.7","depth":1,"path":"training.md","ref":"training.md","articles":[]},"previous":{"title":"Cost Function","level":"1.5","depth":1,"path":"cost-function.md","ref":"cost-function.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["autocover","mathjax","disqus"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"ai-master"},"search":{},"autocover":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gradient-computation.md","mtime":"2017-03-06T08:53:32.270Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-06T08:55:14.903Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
