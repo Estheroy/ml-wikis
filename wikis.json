@@ -1,16 +1,42 @@
 [
 	{
-		"author": "Yifan Xu",
-		"category": "general",
-		"name": "What is Machine Learning",
-		"difficulty": "easy",
-		"time": "1-2 weeks"
+		"category": "machine",
+		"name": "Intro to Machine Learning",
 	},
 	{
-		"author": "Yifan Xu",
-		"category": "supervised",
-		"name": "What is Deep Learning",
-		"difficulty": "medium",
-		"time": "1-2 weeks"
-	}
+		"category": "machine",
+		"name": "k-means",
+	},
+	{
+		"category": "machine",
+		"name": "KNN",
+	},
+	{
+		"category": "machine",
+		"name": "Linear Regression",
+	},
+	{
+		"category": "machine",
+		"name": "Logistic Regression",
+	},
+	{
+		"category": "deep",
+		"name": "LSTM",
+	},
+	{
+		"category": "machine",
+		"name": "Naive Bayes",
+	},
+	{
+		"category": "math",
+		"name": "Optimization and Training for parametrics classifers",
+	},
+	{
+		"category": "machine",
+		"name": "PCA",
+	},
+	{
+		"category": "deep",
+		"name": "Recurrent Neural Network",
+	},
 ]
