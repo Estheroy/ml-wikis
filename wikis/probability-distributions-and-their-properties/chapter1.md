@@ -1,0 +1,16 @@
+## Table Summary of Probability Distributions  
+
+| Name                           |    Type    | Range | Density Function                                                                                                   | Mean  | Variance |
+|--------------------------------|:----------:|-------|--------------------------------------------------------------------------------------------------------------------|-------|----------|
+| Binomial Distribution          | Discrete   |$$x \in [0, n]$$   | $$f(x)=\dbinom{n}{x} p^x (1−p)^{n−x}$$              |$$np$$       | $$np(1-p)$$         |
+| Bernoulli Distribution         | Discrete   | $$x = 0, 1$$     | $$f(x) =,\left\{,\begin{array}{lll},p & \qquad k = 1 \\,1 − p & \qquad k = 0 \\,\end{array},\right.$$  | $$p$$      |    $$p(1-p)$$      |
+| Uniform Distribution           | Discrete   | $$x \in (a,b)$$      | $$f(x) = \frac{r}{b − a,+ 1}$$                                                                 |  $$\frac{1}{b-a}$$     |  $$\frac{[(b - a)^2]}{12}$$        |
+| Poisson Distribution           | Discrete   | $$x \in [0, \infty)$$      | $$f(x)=\dfrac{e^{−\lambda} \lambda^x}{x!}$$                                                                        |  $$\lambda$$     |  $$\lambda$$        |
+| Geometric Distribution         | Discrete   | $$x \in (0, \infty)$$  | $$f(x) = p(1−p)^{x−1}$$                                                                                            | $$\frac{1}{p}$$      |  $$\frac{1-p}{p^2}$$        |
+| Negative Binomial Distribution | Discrete   | $$x \in [0,r]$$      | $$f(x) = \binom{n − 1}{r − 1} p^r (1 − p)^{n − r}$$                                                                |   $$\frac{r(1-p)}{p}$$    |  $$\frac{r(1-p)}{p^2}$$        |
+| Hypergeometric Distribution    | Discrete   |  $$x \leq G$$ $$n - x \leq N-m$$     | $$f(x)=\dfrac{\dbinom{m}{x}\dbinom{N−m}{n−x}}{\dbinom{N}{n}}$$                                                     |  $$\frac{nG}{N}$$     |    $$\frac{nG}{N} \frac{N-G}{N} \frac{N-n}{N-1}$$      |
+| Beta Distribution              | Continuous |  $$x \in [0,1]$$     | $$f(x) = \frac{\Gamma(r + s)}{\Gamma(r,)\Gamma(s)} x^{r−1} (1 − x)^{s−1}$$                                         |  $$\frac{r}{r+s}$$     |    $$\frac{rs}{(r+s)(r+s+1)}$$      |
+| Exponential Distribution       | Continuous |  $$x \ in [0, \infty)$$     | $$f(x)=\lambda e^{−x \lambda}$$                                                                                    |   $$\frac{1}{\lambda}$$    |  $$\frac{1}{\lambda}$$        |
+| Gamma Distribution             | Continuous |   $$x \in (0, \infty)$$    | $$f(x)=\dfrac{1}{(r−1)! \lambda^r} e^{−x/\lambda} x^{r−1}$$                                                        |   $$\frac{r}{\lambda}$$    |     $$\frac{r}{\lambda}$$     |
+| Normal (Gaussian) Distribution | Continuous |   $$x \in (-\infty, \infty)$$    | $$f(x)=\dfrac{1}{\sigma \sqrt{2\pi}} \text{exp}\left\{−\dfrac{1}{2} \left(\dfrac{x−\mu}{\sigma}\right)^2\right\}$$ |  $$\mu$$     |  $$\sigma^2$$        |
+| Chi-Square Distribution        | Continuous |    $$x \ in [0, \infty)$$   | $$f(x)=\dfrac{1}{\Gamma (n/2) 2^{n/2}}x^{n/2−1}e^{−x/2}$$                                                          | $$n$$ |   $$2n$$       |
