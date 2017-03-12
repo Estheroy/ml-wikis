@@ -59,4 +59,8 @@
 		"category": "machine",
 		"name": "Perceptron"
 	},
+	{
+		"category": "math",
+		"name": "introduction-to-probability"
+	}
 ]
