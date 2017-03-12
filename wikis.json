@@ -38,5 +38,25 @@
 	{
 		"category": "deep",
 		"name": "Recurrent Neural Network"
-	}
+	},
+	{
+		"category": "machine",
+		"name": "Adversarial Search"
+	},
+	{
+		"category": "machine",
+		"name": "Classic Search"
+	},
+	{
+		"category": "machine",
+		"name": "Heuristic Search"
+	},
+	{
+		"category": "math",
+		"name": "Probability Distributions and their Properties"
+	},
+	{
+		"category": "machine",
+		"name": "Perceptron"
+	},
 ]

@@ -1,12 +1,7 @@
 {
-    "plugins": [
+"plugins": [
         "autocover",
-        "mathjax",
-        "disqus"
+        "mathjax"
     ],
-    "pluginsConfig": {
-        "disqus": {
-            "shortName": "ai-master"
-        }
-    }
+"pluginsConfig": {}
 }

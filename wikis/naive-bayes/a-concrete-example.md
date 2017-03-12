@@ -16,11 +16,12 @@ $$Prior\quad probability\quad for\quad GREEN \propto \frac{40}{60}$$
 
 $$Prior\quad probability\quad for\quad RED \propto \frac{20}{60}$$
 
+![](/assets/nb_concrete_example.png)
+
 Having formulated our prior probability, we are now ready to classify a new object \(the white circle\). Since the objects are well clustered, it is reasonable to assume that the more G \(or R\) objects in the vicinity of X, the more likely that the new cases belong to that particular color. For this case, we will model the likelihood with a **KNN**-like probability measure. To measure this likelihood, we draw a circle around X which encompasses a user chosen number of points. Then we calculate percentage of these points in each class label. From this we calculate the likelihood:
 
-$$Likelihood\quad of\quad X\quad given\quad GREEN \propto \frac{Number\quad of\quad GREEN\quad in\quad the\quad vicinity\quad of\quad X}{Total\quad number\quad of\quad GREEN\quad cases}$$
-
-$$Likelihood\quad of\quad X\quad given\quad RED \propto \frac{Number\quad of\quad RED\quad in\quad the\quad vicinity\quad of\quad X}{Total\quad number\quad of\quad RED\quad cases}$$
+$$Likelihood\,of\,X\,given\,GREEN\propto \frac{Number\,of\,GREEN\, in \,the\, vicinity\, of\,X}{Total\,number\,in\,the\,vicinity\,of\,X}$$
+$$Likelihood\,of\,X\,given\,RED \propto \frac{Number\,of\,RED\, in \,the\, vicinity\, of\,X}{Total\,number\,in\,the\,vicinity\,of\,X}$$
 
 From the illustration above, it is clear that Likelihood of X given GREEN is smaller than Likelihood of X given RED, since the circle encompasses 1 GREEN object and 3 RED ones. Thus:
 

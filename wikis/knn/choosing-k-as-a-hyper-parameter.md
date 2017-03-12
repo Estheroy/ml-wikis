@@ -10,3 +10,5 @@ We decide of the best K according to the **elbow rule**. We run on the validatio
 
 In this example, we would choose a K of 3.
 
+<img src="/assets/choose_k_for_knn.png" width="365" height=""320/>
+
