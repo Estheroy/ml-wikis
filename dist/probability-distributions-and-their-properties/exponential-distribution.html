@@ -1,0 +1,464 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Exponential Distribution · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="gamma-distribution.html" />
+    
+    
+    <link rel="prev" href="beta-distribution.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Abstract
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    Table Summary of Probability Distributions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="binomial-distribution.html">
+            
+                <a href="binomial-distribution.html">
+            
+                    
+                    Binomial Distribution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="bernoulli-distribution.html">
+            
+                <a href="bernoulli-distribution.html">
+            
+                    
+                    Bernoulli Distribution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="uniform-distribution.html">
+            
+                <a href="uniform-distribution.html">
+            
+                    
+                    Uniform Distribution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="poisson-distribution.html">
+            
+                <a href="poisson-distribution.html">
+            
+                    
+                    Poisson Distribution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="geometric-distribution.html">
+            
+                <a href="geometric-distribution.html">
+            
+                    
+                    Geometric Distribution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="negative-binomial-distribution.html">
+            
+                <a href="negative-binomial-distribution.html">
+            
+                    
+                    Negative Binomial Distribution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="hypergeometric-distribution.html">
+            
+                <a href="hypergeometric-distribution.html">
+            
+                    
+                    Hypergeometric Distribution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="beta-distribution.html">
+            
+                <a href="beta-distribution.html">
+            
+                    
+                    Beta Distribution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="exponential-distribution.html">
+            
+                <a href="exponential-distribution.html">
+            
+                    
+                    Exponential Distribution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="gamma-distribution.html">
+            
+                <a href="gamma-distribution.html">
+            
+                    
+                    Gamma Distribution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="normal-gaussian-distribution.html">
+            
+                <a href="normal-gaussian-distribution.html">
+            
+                    
+                    Normal (Gaussian) Distribution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="chi-square-distribution.html">
+            
+                <a href="chi-square-distribution.html">
+            
+                    
+                    Chi-Square Distribution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Exponential Distribution</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="exponential-distribution">Exponential Distribution</h2>
+<p><img src="assets/image119.png" width="540" height="350"></p>
+<ul>
+<li>Notation<ul>
+<li>$$T &#x223C; Exp(\lambda)$$</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Interpretation<ul>
+<li>Exponential distribution, a continuous analogous of poisson distribution, can be used to describe the waiting time until the first event occurs when the happening rate of the event is very large.    </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Type: <ul>
+<li>Continuous </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Parameter(s):<ul>
+<li>$$\lambda$$ - the rate of event, which measures the number of event occur per unit time </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Probability Density Function:<ul>
+<li>$$f(x)=\lambda e^{-x \lambda}$$    </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Range:<ul>
+<li>$$\lambda \in [0, \infty)$$</li>
+<li>$$x \in [0, \infty)$$</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Mean:<ul>
+<li>$$E(T) = \frac{1}{\lambda}$$    </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Variance:<ul>
+<li>$$Var(T) = \frac{1}{\lambda}$$    </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Application:</p>
+<ul>
+<li>Exponential distribution is very useful because of its memoryless property. For example, in the case of atom decaying, given survival to time $$t$$, the chance of surviving to time $$s$$ in the future is not affected. </li>
+<li>In science, exponential distribution is often used to simulating the half life decaying of atom. For example, suppose we know the average lifetime of a particular atom and its lifetime is approximately exponentially distributed, we can use exponential distribution to estimate the probability that this particular atom is not decayed after a fixed amount of time.  </li>
+<li>Also, since exponential distribution is the continuous analogue of poisson distribution, continued from the customer arriving example from poisson distribution, exponential distribution can also help us to know more information about the arriving time of customers, the likelihood of having $$n$$ customers arrived within a time interval. For example, <ol>
+<li>The probability that no customer arrives between the first three units of times.</li>
+<li>The probability that the first customer arrives after a certain time takes more than 2 units of time.</li>
+<li>The probability that the 4thcustomer arrives within 1 unit of time of the arrival of the previous customer.</li>
+<li>The probability that the 1thcustomer arrive takes less than 0.5 units of time and the waiting time between $$1<em>{th}$$ and $$4</em>{th}$$ customers is more than 4 units of time.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="beta-distribution.html" class="navigation navigation-prev " aria-label="Previous page: Beta Distribution">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="gamma-distribution.html" class="navigation navigation-next " aria-label="Next page: Gamma Distribution">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Exponential Distribution","level":"1.11","depth":1,"next":{"title":"Gamma Distribution","level":"1.12","depth":1,"path":"gamma-distribution.md","ref":"gamma-distribution.md","articles":[]},"previous":{"title":"Beta Distribution","level":"1.10","depth":1,"path":"beta-distribution.md","ref":"beta-distribution.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exponential-distribution.md","mtime":"2017-03-13T06:21:39.388Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-13T06:24:59.083Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

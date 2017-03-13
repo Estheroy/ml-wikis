@@ -29,7 +29,7 @@
 	},
 	{
 		"category": "math",
-		"name": "Optimization and Training for parametrics classifers"
+		"name": "Optimization and Training for parametrics classifiers"
 	},
 	{
 		"category": "machine",
@@ -61,6 +61,6 @@
 	},
 	{
 		"category": "math",
-		"name": "introduction-to-probability"
+		"name": "Introduction to Probability"
 	}
 ]

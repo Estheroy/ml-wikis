@@ -1,0 +1,369 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>What is greedy-best first search? · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="properties-of-greedy-best-first-search.html" />
+    
+    
+    <link rel="prev" href="what-is-admissible.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Abstract
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    What is informed (heuristic) search?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="what-is-heuristic-function.html">
+            
+                <a href="what-is-heuristic-function.html">
+            
+                    
+                    What is heuristic function?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="what-is-admissible.html">
+            
+                <a href="what-is-admissible.html">
+            
+                    
+                    What is admissible?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="what-is-greedy-best-first-search.html">
+            
+                <a href="what-is-greedy-best-first-search.html">
+            
+                    
+                    What is greedy-best first search?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="properties-of-greedy-best-first-search.html">
+            
+                <a href="properties-of-greedy-best-first-search.html">
+            
+                    
+                    Properties of greedy best-first search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="what-is-a-search.html">
+            
+                <a href="what-is-a-search.html">
+            
+                    
+                    What is A-search?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="properties-of-a-search.html">
+            
+                <a href="properties-of-a-search.html">
+            
+                    
+                    Properties of A-search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="resource.html">
+            
+                <a href="resource.html">
+            
+                    
+                    Resource
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >What is greedy-best first search?</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="what-is-greedy-best-first-search">What is greedy-best first search?</h2>
+<p>As what we said earlier, the greedy best-first search algorithm tries to explore the node that is closest to the goal. This algorithm evaluates nodes by using the heuristic function h(n), that is, the evaluation function is equal to the heuristic function, f(n) = h(n). This equivalency is what makes the search algorithm &#x2018;greedy.&#x2019;</p>
+<p>Now let&#x2019;s use an example to see how greedy best-first search works
+Below is a map that we are going to search the path on. For this example, let the valuation function f(n) simply be equal to the heuristic function h(n).</p>
+<p><img src="assets/image00.jpg" width="520" height="230"></p>
+<h6 id="this-is-a-map-of-a-city-we-are-going-to-find-out-a-path-from-city-a-to-city-b">This is a map of a city. We are going to find out a path from city A to city B.</h6>
+<p><img src="assets/image02.jpg" width="520" height="230"></p>
+<h6 id="this-graph-shows-the-straight-distance-from-each-city-to-city-b-the-straight-distances-serve-as-each-cities-hn-in-this-example">This graph shows the straight distance from each city to city B. The straight distances serve as each cities&#x2019; h(n) in this example.</h6>
+<p>Because f(n) = h(n) our algorithm will at every stage choose to explore the node that we know is closest to our goal.</p>
+<p>Let&#x2019;s assume cities on the map as nodes and path between cities as edges. If you Start exploring at node A, we have node O, S and C reachable now.</p>
+<p><img src="assets/image01.jpg" width="520" height="230"></p>
+<p>According to the estimate function f(n) = h(n), and given by the graph of h(n) values above:
+Node O&#x2019;s f(n) = 380,
+Node S&#x2019; f(n) = 253,
+Node C&#x2019;s f(n) = 160.
+The algorithm will choose to explore node C.
+After explored C, we have new node R and P reachable now.</p>
+<p><img src="assets/image04.jpg" width="520" height="230"></p>
+<p>According to the estimate function f(n):
+Node O&#x2019;s f(n) = 380,
+Node S&#x2019; f(n) = 253,
+Node R&#x2019;s f(n) = 193,
+Node P&#x2019;s f(n) = 100.
+The algorithm will choose node P to explore.
+After explored C, we have new node B reachable now.</p>
+<p><img src="assets/image03.jpg" width="520" height="230"></p>
+<p>According to the estimate function f(n):
+Node O&#x2019;s f(n) = 380,
+Node S&#x2019; f(n) = 253,
+Node R&#x2019;s f(n) = 193,
+Node B&#x2019;s f(n) = 0.
+The algorithm will choose node B to explore.
+After explored B, we have reached our goal state. The algorithm will be stopped and the path is found.</p>
+<p><img src="assets/image05.jpg" width="520" height="230"></p>
+<p>Note that in this example, the distance between the current node and next node does NOT inform our next step, only the heuristic given by the distance between potential nodes to the goal.</p>
+<p>One can generalize the evaluation function of a target node to be a weighted sum of the heuristic function and the distance from the current node to that target, which could produce a different result.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="what-is-admissible.html" class="navigation navigation-prev " aria-label="Previous page: What is admissible?">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="properties-of-greedy-best-first-search.html" class="navigation navigation-next " aria-label="Next page: Properties of greedy best-first search">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"What is greedy-best first search?","level":"1.5","depth":1,"next":{"title":"Properties of greedy best-first search","level":"1.6","depth":1,"path":"properties-of-greedy-best-first-search.md","ref":"properties-of-greedy-best-first-search.md","articles":[]},"previous":{"title":"What is admissible?","level":"1.4","depth":1,"path":"what-is-admissible.md","ref":"what-is-admissible.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"what-is-greedy-best-first-search.md","mtime":"2017-03-13T06:21:39.388Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-13T06:21:47.861Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

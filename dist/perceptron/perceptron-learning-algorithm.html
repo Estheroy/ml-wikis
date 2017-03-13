@@ -1,0 +1,313 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Perceptron Learning Algorithm · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="convergence-and-limitation.html" />
+    
+    
+    <link rel="prev" href="perceptron-basics-and-geometric-interpretation.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    Abstract
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    What is the Perceptron?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="perceptron-basics-and-geometric-interpretation.html">
+            
+                <a href="perceptron-basics-and-geometric-interpretation.html">
+            
+                    
+                    Perceptron basics and geometric interpretation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="perceptron-learning-algorithm.html">
+            
+                <a href="perceptron-learning-algorithm.html">
+            
+                    
+                    Perceptron Learning Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="convergence-and-limitation.html">
+            
+                <a href="convergence-and-limitation.html">
+            
+                    
+                    Convergence and Limitation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Perceptron Learning Algorithm</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="perceptron-learning-algorithm">Perceptron Learning Algorithm</h2>
+<p>This section explains how an ideal set of weights can be found. The process of finding some ideal parameters for our training data is called <strong>training</strong>. For training to occur, the perceptron needs to be given a set of training points, or vectors in feature space, as well as a set of corresponding labels per training point. Learning from such a set is called supervised learning, which the perceptron is the first published case of. Let this training set be defined as a matrix $$X$$, where each row of $$X$$ is a datapoint as described above. Recall that for any vector $$x<em>n$$,we always add a 1 to the head of the vector, such that $$x</em>{n,1}$$,or the first term, is always equal to 1.</p>
+<p>$$
+X = \begin{bmatrix}
+    x<em>{1,1} &amp; x</em>{1,2} &amp; \dots  &amp; x<em>{1,n} \
+    x</em>{2,1} &amp; x<em>{2,2} &amp; \dots  &amp; x</em>{2,n} \
+    \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \
+    x<em>{m,1} &amp; x</em>{m,2} &amp; \dots  &amp; x_{m,n}
+\end{bmatrix}</p>
+<p>$$</p>
+<p>And the set of labels, $$y \subset \Re^m$$ is a vector of labels corresponding to each training point. Note that the first subscript here just indexes the identity of a vector, and the second identifies the features of each vector.</p>
+<p>The ideal set of weights is that set that minimize the classification accuracy on this training set. In the case of the perceptron, this can be done iteratively, by starting with a random set of weights, and then intelligently updating them based on their effect on classification accuracy. This second step is performed iteratively, with the training error improving on every step. Eventually our entire training set is correctly classified, meaning our training error has gone to 0, and we have finished training. The update rule for every iteration of our training algorithm is given in terms of the whole weight vector by </p>
+<p>$$w_{t+1} = w_t + \eta(y_i - \hat{y_i}) \cdot x_i$$</p>
+<p>Where $$w<em>t$$ is the old weight vector, $$w</em>{t+1}$$ is the new weight value we&#x2019;re generating, $$\eta$$ is a user-defined constant called the step size, $$y_i$$ is the true label for some point $$x_i$$, $$\hat{y_i}$$ is the output of the perceptron for that same point.</p>
+<p>Here Let&#x2019;s define the formal perceptron learning algorithm:</p>
+<ul>
+<li>Step 0: Initialize the weights (however you choose)</li>
+<li>Step 1: Choose a data point. <strong>Mark it as the most recent start.</strong></li>
+<li>Step 2: Compute the model output for the datapoint using the model function s, as defined above.</li>
+<li>Step 3: Compare model output to the datapoint&#x2019;s true label.<ul>
+<li>If they match, go to Step 5!</li>
+<li>If not, go to Step 4.</li>
+</ul>
+</li>
+<li><p>Step 4: Update weights using perceptron learning rule. </p>
+<pre><code>  $$W_{new} = W_{old} + \eta(target_i - output_i)\cdot x_i$$
+</code></pre><p>  And then, start over on the step 1 with the first data point.</p>
+</li>
+<li><p>Step 5: Record it as correctly classified, and go to the next data point. Treat the dataset as a ring, meaning that you go back to the first data point after the last one.</p>
+</li>
+</ul>
+<p>If the next data datapoint is the most recent start, meaning you&#x2019;ve gone through and correctly classified every datapoint without a single update, you&#x2019;re done!</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="perceptron-basics-and-geometric-interpretation.html" class="navigation navigation-prev " aria-label="Previous page: Perceptron basics and geometric interpretation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="convergence-and-limitation.html" class="navigation navigation-next " aria-label="Next page: Convergence and Limitation">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Perceptron Learning Algorithm","level":"1.4","depth":1,"next":{"title":"Convergence and Limitation","level":"1.5","depth":1,"path":"convergence-and-limitation.md","ref":"convergence-and-limitation.md","articles":[]},"previous":{"title":"Perceptron basics and geometric interpretation","level":"1.3","depth":1,"path":"perceptron-basics-and-geometric-interpretation.md","ref":"perceptron-basics-and-geometric-interpretation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"perceptron-learning-algorithm.md","mtime":"2017-03-13T06:21:39.388Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-13T06:24:56.625Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -9,7 +9,7 @@
 	},
 	{
 		"category": "machine",
-		"name": "KNN" 
+		"name": "KNN"
 	},
 	{
 		"category": "machine",
@@ -29,7 +29,7 @@
 	},
 	{
 		"category": "math",
-		"name": "Optimization and Training for parametrics classifers"
+		"name": "Optimization and Training for parametrics classifiers"
 	},
 	{
 		"category": "machine",
@@ -38,5 +38,29 @@
 	{
 		"category": "deep",
 		"name": "Recurrent Neural Network"
+	},
+	{
+		"category": "machine",
+		"name": "Adversarial Search"
+	},
+	{
+		"category": "machine",
+		"name": "Classic Search"
+	},
+	{
+		"category": "machine",
+		"name": "Heuristic Search"
+	},
+	{
+		"category": "math",
+		"name": "Probability Distributions and their Properties"
+	},
+	{
+		"category": "machine",
+		"name": "Perceptron"
+	},
+	{
+		"category": "math",
+		"name": "Introduction to Probability"
 	}
 ]
