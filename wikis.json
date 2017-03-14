@@ -40,7 +40,7 @@
 		"name": "Recurrent Neural Network"
 	},
 	{
-		"category": "machine",
+		"category": "reinforcement",
 		"name": "Adversarial Search"
 	},
 	{
