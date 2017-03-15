@@ -3,7 +3,7 @@ basePath="$(pwd)"
 
 #clean dist files
 rm -rf "$basePath/dist"
-mkdir "$basePath/dist
+mkdir "$basePath/dist"
 
 #copy wikis
 cp -R "$basePath/wikis" "$basePath/dist"
