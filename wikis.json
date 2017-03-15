@@ -44,11 +44,11 @@
 		"name": "Adversarial Search"
 	},
 	{
-		"category": "machine",
+		"category": "reinforcement",
 		"name": "Classic Search"
 	},
 	{
-		"category": "machine",
+		"category": "reinforcement",
 		"name": "Heuristic Search"
 	},
 	{
