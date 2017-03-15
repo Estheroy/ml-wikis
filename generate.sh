@@ -7,6 +7,7 @@ mkdir "$basePath/dist"
 
 #copy wikis
 cp -R "$basePath/wikis" "$basePath/dist"
+cp "$basePath/wikis.json" "$basePath/dist"
 
 #build each gitbook
 for dir in $basePath/dist/wikis/*;
