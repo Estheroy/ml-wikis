@@ -3,7 +3,7 @@
 #### 1.Complement Rule 
 
 
-<img src="/assets/image12.png" width="200" height="100" aligh="middle"/>
+<img src="/assets/image12.png" width="187" height="100" aligh="middle"/>
 
 
 
@@ -23,7 +23,7 @@ Disjoint Union is a binary operator that combines all distinct elements of two s
 #### 3.Subset Rule
 
 
-<img src="/assets/image09.png" width="200" height="100" aligh="middle"/>
+<img src="/assets/image09.png" width="187" height="100" aligh="middle"/>
 
 
 
@@ -41,7 +41,7 @@ A is a subset of B: $$𝐴 ⊆ 𝐵$$. The occurrence of event A indicates the o
 
 
 
-<img src="/assets/image05.png" width="200" height="100" aligh="middle"/>
+<img src="/assets/image05.png" width="187" height="100" aligh="middle"/>
 
 
 
@@ -59,7 +59,7 @@ Two events A, B are independence if  $$P(𝐴 ∩ 𝐵) = 𝑃(𝐴)𝑃(𝐵)$$
 	
 	
 
-<img src="/assets/image16.png" width="200" height="100" aligh="middle"/>
+<img src="/assets/image16.png" width="187" height="100" aligh="middle"/>
 
 
 
@@ -75,7 +75,7 @@ A and B are two mutually exclusive events. **The occurrence of event B indicates
 
 
 
-<img src="/assets/image17.png" width="200" height="100" aligh="middle"/>
+<img src="/assets/image17.png" width="187" height="100" aligh="middle"/>
 
 
 
@@ -89,7 +89,7 @@ Note: Mutually exclusive events is a special case for inclusion-exclusion rule. 
 
 
 
-<img src="/assets/image13.png" width="200" height="100" aligh="middle"/>
+<img src="/assets/image13.png" width="187" height="100" aligh="middle"/>
 
 
 
@@ -104,7 +104,7 @@ A event can be partitioned into finite or countably infinite mutually disjoint e
 
 
 
-<img src="/assets/image09.png" width="200" height="100" aligh="middle"/>
+<img src="/assets/image09.png" width="187" height="100" aligh="middle"/>
 
 
 
@@ -129,7 +129,7 @@ De Morgan’s Law describes the effect of complement on the relationship between
 
 
 
-<img src="/assets/image04.png" width="300" height="300" aligh="middle"/>
+<img src="/assets/image04.png" width="191" height="184" aligh="middle"/>
 
 
 
