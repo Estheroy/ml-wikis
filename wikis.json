@@ -62,5 +62,13 @@
 	{
 		"category": "math",
 		"name": "Introduction to Probability"
-	}
+	},
+	{
+		"category": "math",
+		"name": "Hypothesis Testing"
+	},
+	{
+		"category": "math",
+		"name": "Conditional Probability"
+	},
 ]
