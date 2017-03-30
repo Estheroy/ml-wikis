@@ -71,4 +71,8 @@
 		"category": "math",
 		"name": "Bayesian Statistics"
 	},
+	{
+		"category": "deep",
+		"name": "Bayes Net"
+	},
 ]
