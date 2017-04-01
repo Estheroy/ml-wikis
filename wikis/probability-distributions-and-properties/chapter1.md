@@ -1,4 +1,4 @@
-## Table Summary of Probability Distributions  
+## Table Summary of Probability Distributions and Properties
 
 | Name                           |    Type    | Range | Density Function                                                                                                   | Mean  | Variance |
 |--------------------------------|:----------:|-------|--------------------------------------------------------------------------------------------------------------------|-------|----------|

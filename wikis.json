@@ -53,7 +53,7 @@
 	},
 	{
 		"category": "math",
-		"name": "Probability Distributions and their Properties"
+		"name": "Probability Distributions and Properties"
 	},
 	{
 		"category": "machine",
@@ -74,5 +74,9 @@
 	{
 		"category": "deep",
 		"name": "Bayes Net"
+	},
+	{
+		"category": "deep",
+		"name": "Kernel SVM"
 	},
 ]
