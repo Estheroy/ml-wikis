@@ -1,10 +1,18 @@
-## How it works?
+## Bayes theorem
 
 Here we have the generic form of Bayes theorem
 
-$$P(C|x) = \frac{P(x|C)P(C)}{P(x)}$$
+<p align="center">
+	<img class="plot" src="/assets/image26.png" />
+</p>
 
-Let **x** be a vector composed of N elements, corresponding to N features in a dataset. For any new point, Bayes theorem allows us to calculate the probability of a certain class, P\(C\|**x**\), given P\(C\), P\(**x**\), and P\(**x**\|C\). Technically, these four terms are called the **posterior**, **prior**, **evidence**, and **likelihood**, respectively. Typically the likelihood, P\(x\|C\), is expressed as a joint probability, as in
+Let **x** be a vector composed of N elements, corresponding to N features in a dataset. For any new point, Bayes theorem allows us to calculate the probability of a certain class, P\(C\|**x**\), given P\(C\), P\(**x**\), and P\(**x**\|C\). Technically, these four terms are called the **posterior**, **prior**, **evidence**, and **likelihood**. The graph illustration of this equation is shown below:
+
+<p align="center">
+	<img class="plot" src="/assets/image8.png" />
+</p> 
+
+Typically the likelihood, P\(x\|C\), is expressed as a **joint probability**, as in
 
 $$P(C|x_{1},x_{2},x_{3},x_{4},...,x_{n}) = \frac{P(x_{1},x_{2},x_{3},x_{4},...,x_{n}|C)P(C)}{P(x_{1},x_{2},x_{3},x_{4},...,x_{n})}$$
 

@@ -1,0 +1,7 @@
+## Adaboost in Practice
+
+Adaboost was a very successful classification algorithm of the time (90s, early 2000s), very simple to implement, yet competitive with support vector machines. Notice that adaboost has no parameters to tune, unlike a **support vector machine**, where the C parameter (**soft margin**) and **kernel parameters** need to be adjusted. For this reason, adaboost is recommended as a good “out of the box” classifier, because you can get good results quickly.
+
+The number of rounds of boosting, $$M$$, would seem to be a parameter that controls how many terms in the sum appear, and should be controlling the complexity of the learned classifier. In practice, two things happen as rounds of boosting proceed: first, even after training set error has gone to zero, further rounds of adaboost continue to improve test set error. Second, Adaboost also seems to be immune to overfitting, despite running for many more rounds, it was rare to observe a badly overfit model. 
+
+Other methods could be used instead of **decision trees** as the weak learners inside Adaboost. However, **decision trees** are particularly fast to train, and have no additional parameters to tune. Because adaboost was developed to use any weak learner, there is no advantage to using a complex model as a weak learner, such as a support vector machine : it would not necessarily make adaboost perform any better, and would take much longer to train. 

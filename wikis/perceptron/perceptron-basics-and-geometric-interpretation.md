@@ -1,18 +1,22 @@
-# Perceptron basics and geometric interpretation
+# Core Idea
 
 
 The perceptron is a binary classifier. For any input $$x\subset\Re^n$$, a perceptron maps that vector to the set $$\{0,1\}$$. The perceptron is used in this way to map each point in some feature space to two possible labels. It is used for supervised learning tasks, where a set of or training points is provided together with a set of true labels. The perceptron can learn from these examples and assign labels to previously unseen points.
 
-The perceptron is a parametric model in that, once it is trained, it has a set number of weights that it uses to assign labels to new points. This article covers the exact training process, by which an ideal set of weights is found, in a later section. For this section we will explain how a perceptron uses these weights, and what they correspond to mathematically and functionally. Note that the terms “set of weights” and “weight vector” are used interchangeably. 
+The perceptron is a **parametric model** in that, once it is trained, it has a set number of weights that it uses to assign labels to new points. This article covers the exact training process, by which an ideal set of weights is found, in a later section. For this section we will explain how a perceptron uses these weights, and what they correspond to mathematically and functionally. Note that the terms “set of weights” and “weight vector” are used interchangeably. 
 
 
 Part of the perceptron model is that it computes an explicit **decision boundary**, which is very closely related to the weights. A decision boundary is a line, plane, or hyper-plane, (depending on the dimensionality of the input,) that is used to partition the feature space into two disjoint regions corresponding to either class. Every point above a decision boundary is assigned one class, every point below it is assigned the other.
 
 
-<img src="/assets/image25.png" width="300" height="300" />
+<p align="center">
+	<img class="plot" src="/assets/image19.png" />
+</p>
+
+The weights define the decision boundary in that any hyperplane in n-dimensional space can be defined by n parameters. These n parameters correspond to the slope, or ‘rise-over-run’ of the hyper-plane over each of the n axes, with one parameter for each dimension.
 
 
-Training a perceptron is functionally equivalent to finding just such a line for a training set, with the hope that the line would work for any new point. This is based, like all classifiers, on the assumption that all points of a class should inhabit the same region of feature space, and that different classes should inhabit different regions of feature space. Even though the perceptron classifies a new point by performing mathematical operations on it, we can visualize the predictions it would make with this decision boundary.
+**Training a perceptron** is functionally equivalent to finding just such a line for a training set, with the hope that the line would work for any new point. This is based, like all **classifiers**, on the assumption that all points of a class should inhabit the same region of feature space, and that different classes should inhabit different regions of feature space. Even though the perceptron classifies a new point by performing mathematical operations on it, we can visualize the predictions it would make with this decision boundary.
 
 The perceptron, like all models, does this by using intelligent mathematical operations. It performs a set of operations on any given vector in the feature space, and the output of those operations will correspond to the value of the assigned class. Below is a formal explanation of the process of classification.	
 	

@@ -1,8 +1,7 @@
 ## The Formal Naive Bayes Model
 
-![](/assets/bayesian.png)
 
-Naive Bayes methods are a set of supervised learning algorithms based on applying Bayes’ theorem with the “naive” assumption of independence between every pair of features. Given a class variable $$y$$ and an n-dimensional feature vector with elements $$x_{1}$$through $$x_{n}$$, Bayes’ theorem states the following relationship:
+Naive Bayes methods are a set of supervised learning algorithms based on applying **Bayes’ theorem** with the **naive assumption** of **independence** between every pair of features. Given a class variable $$y$$ and an n-dimensional feature vector with elements $$x_1$$ through $$x_n$$, Bayes’ theorem states the following relationship:
 
 $$P(y|x_{1},...,x_{n}) = \frac{P(y)P(x_{1},...,x_{n}|y)}{P(x_{1},...,x_{n})}$$
 
@@ -10,7 +9,7 @@ Using the naive independence assumption that
 
 $$P(x_{i}|y,x_{1},...,x_{i-1},x_{i+1},...,x_{n}) = P(x_{i}|y)$$
 
-for all i, this relationship is simplified to
+for all $$i$$, this relationship is simplified to
 
 $$P(y|x_{1},...,x_{n}) = \frac{P(y)\prod_{i=1}^{n}P(x_{i}|y)}{P(x_{1},...,x_{n})}$$
 

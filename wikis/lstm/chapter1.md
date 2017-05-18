@@ -7,13 +7,13 @@ As we talked earlier, LSTMs are explicitly designed to deal with the long-term d
 
 ![](/assets/RNN repeating module.jpg)
 
-The repeating module in a standard RNN contains a single layer.
+###### The repeating module in a standard RNN contains a single layer.
 
 LSTMs also have this chain like structure, but the repeating module has a different local structure. Instead of having a single neural network layer, there are four, interacting in a very special way.
 
 ![](/assets/RNN repeating module with 4 layers.jpg)
 
-The repeating module in an LSTM contains four interacting layers.
+###### The repeating module in an LSTM contains four interacting layers.
 
 Don’t worry about the details of what’s going on. We’ll walk through the LSTM diagram step by step later. For now, let’s just try to get comfortable with the notation we’ll be using.
 

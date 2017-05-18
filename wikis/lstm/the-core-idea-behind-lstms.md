@@ -9,7 +9,7 @@ The LSTM does have the ability to remove or add information to the cell state, c
 
 <img src="/assets/sigmoid layer output.jpg" width="300" width="190" />
 
-This sigmoid layer outputs numbers between zero and one, describing how much of each component should be let through. A value of zero means “let nothing through,” while a value of one means “let everything through!” This works on the principle that multiplication by 1 yields the same number, by 0 yields zero, and every number in between by a product in between.
+This** sigmoid** layer outputs numbers between zero and one, describing how much of each component should be let through. A value of zero means “let nothing through,” while a value of one means “let everything through!” This works on the principle that multiplication by 1 yields the same number, by 0 yields zero, and every number in between by a product in between.
 An LSTM has three of these gates, to protect and control the cell state.
 
 The Core Idea Behind LSTMs

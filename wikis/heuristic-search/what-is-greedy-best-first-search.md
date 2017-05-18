@@ -15,7 +15,7 @@ Below is a map that we are going to search the path on. For this example, let th
 
 Because f(n) = h(n) our algorithm will at every stage choose to explore the node that we know is closest to our goal.
 
-Let’s assume cities on the map as nodes and path between cities as edges. If you Start exploring at node A, we have node O, S and C reachable now.
+Let’s assume cities on the map as nodes and path between cities as edges. If you start exploring at node A, we have node O, S and C reachable now.
 
 
 <img src="/assets/image01.jpg" width="520" height="230" />

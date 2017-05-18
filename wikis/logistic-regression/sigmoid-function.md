@@ -1,7 +1,12 @@
 ## Sigmoid Function
 
+The function $$\sigma(z)=\frac{1}{1+e^{-z}}$$ is often called the logistic function or sigmoid . It is called the sigmoid because it is S-shaped. This function can be seen as squashing the value of its argument onto the range $$\{0,1\}$$. What we mean by this is that the sigmoid takes any real number, and outputs numbers between 0 and 1. Because of this, the sigmoid’s output can be interpreted as a probability, which we will use to make stochastic predictions.
+
 <img src="/assets/sigmoid_function.png" width="468" height="320"/>
 
 
-The function $$\sigma(z)=\frac{1}{1+e^{-z}}$$ is often called the sigmoid or logistic function. It is called the sigmoid because it is S-shaped. This function can be seen as squashing the value of its argument onto the range (0,1). This grants several useful properties. First, the sigmoid approaches the values of the class labels, 0 and 1. Second, the sigmoid’s output can be interpreted as a probability, which we will use to make predictions.
-One should think of the argument to the sigmoid function as a sort of signed “evidence,” for one class or the other. Specifically, if the input to the sigmoid is very far from zero, then the value of the sigmoid will be close to 1 or 0. If the input is positive, the output will be closer to 1, and if the input is negative, then the output will be closer to 0. These two facts are key. The sigmoid will be used as the final step in predicting classes from a datapoint, and combining the two facts, we see that the magnitude and sign of the input determine the predicted confidence, and class of our model, respectively.
+For binary classification problems, a chosen method makes predictions that match the label scheme. Direct prediction is what we call the output of a method when its co-domain matches label values directly. Perceptrons make direct predictions because they output to either 0 or 1 for any point, which are taken as actual label values.
+
+A stochastic prediction is a function output that corresponds to a probability of either class. For binary classification, there are only two classes, therefore, if we return the probability of one class then we are implicitly  returning the probability of the other. This is because the probability of either class must always add up to 1.
+
+

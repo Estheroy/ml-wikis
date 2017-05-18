@@ -1,6 +1,9 @@
 # Summary
 
 * [Abstract](README.md)
+* [What are probability distributions?](what-are-probability-distributions.md)
+* [Random Variables](random-variables.md)
+* [Probability Functions](probability-functions.md)
 * [Table Summary of Probability Distributions](chapter1.md)
 * [Binomial Distribution](binomial-distribution.md)
 * [Bernoulli Distribution](bernoulli-distribution.md)
@@ -14,4 +17,3 @@
 * [Gamma Distribution](gamma-distribution.md)
 * [Normal \(Gaussian\) Distribution](normal-gaussian-distribution.md)
 * [Chi-Square Distribution](chi-square-distribution.md)
-

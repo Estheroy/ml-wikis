@@ -1,5 +1,7 @@
 ## Training
 
-To train a logistic regression unit, we initialize with a random set of weights, compute the classifier performance with those weights, and then differentiate the classifier output with respect to those weights. We use the fact that a derivative points to the direction of ascent to move the weights so that the error function is reduced. This process, minimizing the error function, is called training, and it is common to all parametric classifiers. For a more thorough treatment of gradient descent and training in general, please see gradient descent and training by optimization.
+To train a logistic regression unit, we initialize with a random set of weights, compute the classifier performance with those weights, and then differentiate the classifier output with respect to those weights. 
 
-<img src="/assets/logistic_regression_flowchart.png" height="330" width="760"/>
+We adjust the weights in the direction opposite the gradient, so to reduce the function a small amount. This new weight value is used to compute the classifier again, and the classifier output is again differentiated with respect to the weights. 
+
+The adjustment, prediction, and differentiation process repeats, and on each iteration the loss function is reduced. For a more thorough treatment of gradient descent and training in general, please see **gradient descent** and **training by optimization**.

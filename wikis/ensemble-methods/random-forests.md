@@ -1,0 +1,17 @@
+## Random Forests
+
+Random Forests combine bagging and **decision trees**. Although bagging does work with any classifier, it turns out that decision trees are a particularly good choice. Decision trees are simple and fast to train, but they can easily overfit. The **overfitting** of decision trees is mostly due to their **high variance**: a decision tree tries to produce perfect classification by adding branches to the tree until, at the final leaf node, the remaining data points all belong to a single class. With a few difficult to classify data points, the tree could become very complex. 
+
+<p align="center">
+<img class="banner" src="/assets/image1.jpg" />
+</p>
+
+**Decision trees** have special techniques such as **pruning** (simplifying the decision tree) to **prevent overfitting**. Pruning removes branches and tries to control the complexity of the tree by managing a tradeoff between getting good training set accuracy (by learning a complex rule) and learning a simpler rule (by removing branches of the tree). 
+
+Combining **decision trees** with bagging solves the **overfitting** problem, in a different way, taking advantage of the fact that each bag contains a different set of training data points. If there were a difficult data point, that causes some tree to grow a very complex decision rule, this point will only be in some of the bags, so only some of trees will overfit to this point. At decision time, the votes from any overfit tree will combine with votes from other trees, so that as a group the overfit (poor) decisions will wash out. 
+
+The random forest technique is based on applying the **decision tree method** on each bag of data, with no **pruning** done to these trees. Because bagging works best with classifiers that are very different from each other, there are two more tricks done with random forests to make the trees different. One idea is **random feature selection**: after we create a bag for training, we also randomly choose a subset of features, and only use those features to train the classifier. Again this will prevent overfitting, because it forces the classifiers to work with all the features (as an ensemble), and each individual tree can’t rely on any single feature. 
+
+Another idea applied in random forests is to create **random feature collections**, by multiplying the data point by a random vector with uniform weights $$[-1 \ 1]$$. Now each feature in the tree is some combination of the original features. This will also help to generate a collection of different trees, which don’t pay too much attention to any particular feature or data point. 
+
+In a random forest, each individual tree won’t be as good as if we had used a more sophisticated method which might grow a tree better tuned to the training data. But the collection of trees in a random forest can often perform very well, and random forests often perform well in competitions and in real applications. Random Forests are also not very sensitive to the parameters, unlike a technique like a **support vector machine**, where the $$C$$ parameter and kernel must be tuned to the dataset. In a random forest there are some parameters like how many trees to use, but the performance doesn’t depend very critically on the number of trees: adding more trees can only help, not decrease the performance. Because the parameters don’t have to be carefully tuned, random forests are a good first technique to use as they offer good performance without too much effort. 

@@ -2,9 +2,9 @@
 
 * [Abstract](README.md)
 * [What is graph search algorithm?](chapter1.md)
-* [Graphs and trees](graphs-and-trees.md)
-* [Branching factor](branching-factor.md)
-* [Complete and optimal](complete-and-optimal.md)
+* [Graphs and Trees](graphs-and-trees.md)
+* [Branching Factor](branching-factor.md)
+* [Complete and Optimal](complete-and-optimal.md)
 * [What is breadth-first search](what-is-breadth-first-search.md)
 * [The property of breadth-first search](the-property-of-breadth-first-search.md)
 * [What is depth-first search](what-is-depth-first-search.md)

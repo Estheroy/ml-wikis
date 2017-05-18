@@ -1,0 +1,292 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Random Forests · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="conclusion.html" />
+    
+    
+    <link rel="prev" href="bagging.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Abstract
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    What are Ensemble Methods?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="bagging.html">
+            
+                <a href="bagging.html">
+            
+                    
+                    Bagging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="random-forests.html">
+            
+                <a href="random-forests.html">
+            
+                    
+                    Random Forests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="conclusion.html">
+            
+                <a href="conclusion.html">
+            
+                    
+                    Conclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Random Forests</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="random-forests">Random Forests</h2>
+<p>Random Forests combine bagging and <strong>decision trees</strong>. Although bagging does work with any classifier, it turns out that decision trees are a particularly good choice. Decision trees are simple and fast to train, but they can easily overfit. The <strong>overfitting</strong> of decision trees is mostly due to their <strong>high variance</strong>: a decision tree tries to produce perfect classification by adding branches to the tree until, at the final leaf node, the remaining data points all belong to a single class. With a few difficult to classify data points, the tree could become very complex. </p>
+<p align="center">
+<img class="banner" src="assets/image1.jpg">
+</p>
+
+<p><strong>Decision trees</strong> have special techniques such as <strong>pruning</strong> (simplifying the decision tree) to <strong>prevent overfitting</strong>. Pruning removes branches and tries to control the complexity of the tree by managing a tradeoff between getting good training set accuracy (by learning a complex rule) and learning a simpler rule (by removing branches of the tree). </p>
+<p>Combining <strong>decision trees</strong> with bagging solves the <strong>overfitting</strong> problem, in a different way, taking advantage of the fact that each bag contains a different set of training data points. If there were a difficult data point, that causes some tree to grow a very complex decision rule, this point will only be in some of the bags, so only some of trees will overfit to this point. At decision time, the votes from any overfit tree will combine with votes from other trees, so that as a group the overfit (poor) decisions will wash out. </p>
+<p>The random forest technique is based on applying the <strong>decision tree method</strong> on each bag of data, with no <strong>pruning</strong> done to these trees. Because bagging works best with classifiers that are very different from each other, there are two more tricks done with random forests to make the trees different. One idea is <strong>random feature selection</strong>: after we create a bag for training, we also randomly choose a subset of features, and only use those features to train the classifier. Again this will prevent overfitting, because it forces the classifiers to work with all the features (as an ensemble), and each individual tree can&#x2019;t rely on any single feature. </p>
+<p>Another idea applied in random forests is to create <strong>random feature collections</strong>, by multiplying the data point by a random vector with uniform weights $$[-1 \ 1]$$. Now each feature in the tree is some combination of the original features. This will also help to generate a collection of different trees, which don&#x2019;t pay too much attention to any particular feature or data point. </p>
+<p>In a random forest, each individual tree won&#x2019;t be as good as if we had used a more sophisticated method which might grow a tree better tuned to the training data. But the collection of trees in a random forest can often perform very well, and random forests often perform well in competitions and in real applications. Random Forests are also not very sensitive to the parameters, unlike a technique like a <strong>support vector machine</strong>, where the $$C$$ parameter and kernel must be tuned to the dataset. In a random forest there are some parameters like how many trees to use, but the performance doesn&#x2019;t depend very critically on the number of trees: adding more trees can only help, not decrease the performance. Because the parameters don&#x2019;t have to be carefully tuned, random forests are a good first technique to use as they offer good performance without too much effort. </p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="bagging.html" class="navigation navigation-prev " aria-label="Previous page: Bagging">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="conclusion.html" class="navigation navigation-next " aria-label="Next page: Conclusion">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Random Forests","level":"1.4","depth":1,"next":{"title":"Conclusion","level":"1.5","depth":1,"path":"conclusion.md","ref":"conclusion.md","articles":[]},"previous":{"title":"Bagging","level":"1.3","depth":1,"path":"bagging.md","ref":"bagging.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"random-forests.md","mtime":"2017-05-18T17:33:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-18T17:34:17.792Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

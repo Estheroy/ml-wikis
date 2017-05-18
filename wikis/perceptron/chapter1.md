@@ -1,12 +1,13 @@
 ## Abstract
 
-In machine learning, the **perceptron** is an algorithm for supervised learning of binary classifiers, which is a class of functions that can decide whether an input, represented by a vector of numbers, belongs to some specific class or not.
+The perceptron is a binary classifier that learns an explicit decision boundary from an example set of labelled data, which can then be used to classify new, previously unseen, data. The perceptron is the first published and arguably the simplest artificial neuron, which is the class of models that form the literal basic unit of neural networks and deep learning. The perceptron forms an ideal introductory concept to these topics because of its simplicity. 
 
-The following sections is constructed as following:
+It's a multi-part series in which I am planning to cover the following:
 
-* What is perceptron?
-* Inspiration of perceptron
-* Perceptron architecture
-* Perceptron Learning Algorithm
-* Convergence and Limitation
+1. What is perceptron?
+2. Core Idea
+3. Geometric Interpretation
+4. Perceptron Learning Algorithm
+5. Convergence and Limitation
+
 

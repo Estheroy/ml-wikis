@@ -1,4 +1,4 @@
-## What are graphs and trees?
+## Graphs and Trees
 
 The **graph** is an abstract concept in mathematics. A graph is defined as two sets of objects. One of these sets is the **node set**, which contains all of the ‘**nodes**’ in the graph. Nodes are also called **vertices**, and can be thought of as the ‘things,’ in the graph. Some pairs of these nodes are **related**, or have some abstract relationship between them. This relationship is called an **edge**, which can be thought of as ‘connections’ between the ‘things’ in the graph. Edges compose the second set of objects in a graph, which is called the **edge set**. Typically, a graph is depicted in diagrammatic form as a set of dots for the nodes, joined by lines or curves between related nodes depicting the edges. Graphs are used to represent any objects with pair-wise relationships. A very famous example is Facebook, where every user’s profile is connected to a set of other user’s profiles. The profiles can be treated as nodes, and the ‘friend’ relation can be treated as an edge between two profiles.
 

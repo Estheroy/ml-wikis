@@ -1,10 +1,20 @@
 ## Cost Function
 
+As in all supervised parametric models, training a logistic regression instance on a dataset is the process of finding the ideal weights w that minimize the error between the predictions for that dataset and the true labels. We accomplish this by minimizing a loss function. 
+
+If our function returns that the probability of class 1 is .9, then it is fairly certain that the class is 1. If our function returns that the probability of class 1 is .1, then, because the probabilities of the two must add up to 1, we can say that the classifier is .9 sure that the class is 0.
+
+It should be noted that for logistic regression, we are treating the stochastic prediction of the model as the prediction. We are not rounding the sigmoid value to class labels before feeding those values into the loss function. In this way, we are keeping confidence information, and the loss function is minimized when every point in the training set is correctly classified, with high confidence. 
+
+<p align="center">
+	<img class="plot" src="/assets/image31.png" />
+</p>
+
 For a set of training examples $$\{x^{(i)},y^{(i)},{\ for}~i=1,\cdots,n\}$$, with binary labels, the following **cost function** measures how well a given function h classifies the set. Please note that the function his the same function just described, namely, $$P(C=1|x)$$. Note as well that the summation is across the index of every datapoint and target pair in our set, and so we’re summing across the entire set.
 
 $$
 \begin{eqnarray*}
-J(\theta)=-\sum_{i}(y^{(i)}\log(h_{\theta}(x^{(i)}))+(1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))
+L(w) = -\sum_{i=1}^{n} y_{i}log(\sigma (w \cdot x_{i})) + (1-y_{i})log(1- \sigma (w \cdot x_{i}))
 \end{eqnarray*}
 $$
 

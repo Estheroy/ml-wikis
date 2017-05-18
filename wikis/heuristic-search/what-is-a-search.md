@@ -20,7 +20,7 @@ g(n,m) is the number along the edge between any two nodes n and m; g(A,O) = 146,
 
 
 Let’s assume cities on the map as nodes and path between cities as edges.
-Strat exploring node a, we have node O, S and C reachable now.
+strat exploring node a, we have node O, S and C reachable now.
 
 
 <img src="/assets/image01.jpg" width="520" height="230" />

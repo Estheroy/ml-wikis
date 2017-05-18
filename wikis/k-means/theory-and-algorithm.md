@@ -35,5 +35,5 @@ Let’s derive our formal algorithm as described above:
 	<img class="plot" src="/assets/iteration_kmeans.jpg" />
 </p>
 
-Different colors represent a different assigned cluster, centroids denoted by ‘+’.
+###### Different colors represent a different assigned cluster, centroids denoted by ‘+’.
 

@@ -1,5 +1,8 @@
 ## A Concrete Example
 
+<p align="center">
+	<img class="plot" src="/assets/image14.png" />
+</p>
 To demonstrate the concept of naïve Bayes classification, consider the example displayed in the illustration above. As indicated, the points can be classified as either G for green, or R for red. Our task is to classify new cases based on the statistics of this set.
 
 Since there are twice as many G points as R, it is reasonable to believe that a new case \(which hasn't been observed yet\) is twice as likely to be green rather than red. In a Bayesian analysis, this is expressed by the prior probability.
@@ -16,7 +19,9 @@ $$Prior\quad probability\quad for\quad GREEN \propto \frac{40}{60}$$
 
 $$Prior\quad probability\quad for\quad RED \propto \frac{20}{60}$$
 
-![](/assets/nb_concrete_example.png)
+<p align="center">
+	<img class="plot" src="/assets/image7.png" />
+</p>
 
 Having formulated our prior probability, we are now ready to classify a new object \(the white circle\). Since the objects are well clustered, it is reasonable to assume that the more G \(or R\) objects in the vicinity of X, the more likely that the new cases belong to that particular color. For this case, we will model the likelihood with a **KNN**-like probability measure. To measure this likelihood, we draw a circle around X which encompasses a user chosen number of points. Then we calculate percentage of these points in each class label. From this we calculate the likelihood:
 
