@@ -1,5 +1,0 @@
-## Deterministic Games
-
-A game is **deterministic** if the resolution of player actions leads to theoretically predictable outcomes. It is nondeterministic to one degree or another if actions lead to random outcomes. Chess is an example of a determinist game: the rules allow for no variation of outcome and there are no physical factors involved. The entire range of possible positions of a chess game is finite. Football, on the other hand, is a nondeterministic game: players cannot reliably kick the ball exactly the same way each time, and the small variations of that action lead to chaotic outcomes. Similarly, there are infinite possible positions of a football game, in that any player can be moved any tiny amount over, and this might affect the outcome of the game.
-
-Deterministic games are often described as directed graphs, specifically, each node in a graph represents a position, and each child node represents possible following moves. This concept is given more treatment in the graph search wiki.

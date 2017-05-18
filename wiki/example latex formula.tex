@@ -1,0 +1,59 @@
+\begin{eqnarray*}
+E(w)&=&\sum^n_{i=1}C(M(x_j^*;w),y_i)\\
+M(x_i^*;w)&=&f(w\cdot x_i)\\
+L(w)&=&E(w)+R(w)y\subset\{0,1\}^Dx\subset\Re^D\\
+&&{\rm M}:{\rm R}^{\rm D}\to(0,1)^{\rm K}M(x_i;W,b)=f(Wx_i+b)\\
+Wx+b&=&W'x'\\
+E(W)&=&-\frac{1}{n}\sum^n_{i=1}y_i\cdot\log(1-morm[f(Wx_i)])\\
+&&{\rm where}:{\rm morm}(x)=\frac{x}{\sum(x)}\\
+R(W)&=&\sum^k_{p=1}\lambda\|w^{(p)}\|^2
+\end{eqnarray*}
+
+\begin{eqnarray*}
+L(W)&=&E(W)+R(W)=E(W)\\
+&=&-\frac{1}{n}\sum^n_{i=1}y_i\cdot\log(1-{\rm norm}[f(Wx_i)])+\sum^k_{p=1}\lambda\|w^{(p)}\|^2\\
+\Delta w_{k,d}&=&\frac{\partial}{\partial_{w_{k,d}}}L(W)\\
+w_{k,d}(t+1)&=&w_{k,d}(t)-\eta\Delta w_{k,d}\\
+\frac{\partial E_3}{\partial W}&=&\sum^3_{k=0}\frac{\partial E_3}{\partial \hat{y}_3}
+\frac{\partial \hat{y}_3}{\partial s_3}\left(\prod^3_{j=k+1}\frac{\partial s_j}{\partial s_{j-1}}\right)\frac{\partial s_k}{\partial W}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+L(y,o)&=&-\frac{1}{N}\sum_{n\in N}y_n\log O_n\\
+\frac{\partial E_3}{\partial W}&=&\sum^3_{k=0}\frac{\partial E_3}{\partial\hat{y}_3}
+\frac{\partial\hat{y}_3}{\partial s_3}\frac{\partial s_3}{\partial s_k}\frac{\partial s_k}{\partial W}\\
+\frac{\partial s_3}{\partial s_1}&=&\frac{\partial s_3}{\partial s_2}\frac{\partial s_2}{\partial s_1}.\\
+\frac{\partial E_3}{\partial W}&=&\sum^3_{k=0}\frac{\partial E_3}{\partial \hat{y}_1}
+\frac{\partial \hat{y}_3}{\partial s_3}\left(\prod^3_{j=k+1}
+\frac{\partial s_j}{\partial s_{j-1}}\right)\frac{\partial s_k}{\partial W}\\
+\sigma(z)&=&\frac{1}{1+e^{-z}}
+\end{eqnarray*}
+
+$P(C=1|x)=\sigma(w_0+w_1x_1+w_2x_2+w_3x_3+\cdots w_dx_d)=\sigma(w\cdot x)$, where
+$w=[w_0,w_1,\cdots,w_d]$ and $x=[1,x_1,x_2,\cdots,x_d]$
+\begin{eqnarray*}
+&&\{x^{(i)},y^{(i)},{\rm for}~i=1,\cdots,n\}\\
+J(\theta)&=&-\sum_{i}(y^{(i)}\log(h_{\theta}(x^{(i)}))+(1-y^{(i)})\log(1-h_{\theta}(x^{(i)}))).\\
+\frac{\partial J(w)}{\partial w_j}&=&\frac{\partial J(\theta)}{\partial h_{\theta}(z)}*
+\frac{\partial h_{\theta}(z)}{\partial z}*\frac{\partial x}{\partial w_j}
+\end{eqnarray*}
+where $\sigma(z)=h_{\theta}(x)=\frac{1}{1+e^{-z}}$ and $z=w\cdot x$
+
+The derivative of $J(\theta)$ with respect to $h_{\theta}(z)$ is just:
+$$
+\frac{y^{(i)}}{h_{\theta}(z)}+\frac{y^{(i)}-1}{1-h_{\theta}(z)}
+$$
+The derivative of the sigmoid function, $h_{\theta}(z)=\frac{1}{1+e^{-z}}$ with
+respect to z is just $(1-h_{\theta}(z))h_{\theta}(z)$
+
+The derivative of z, the dot product, with respect to any weight $w_j$ is just $x_j$
+So put those three above derivatives in the chain rule:
+\begin{eqnarray*}
+&=&\left(\frac{y^{(i)}}{h_{\theta}(x)}+\frac{1-y^{(i)}}{1-h_{\theta}(x)}\right)(1-h_{\theta}(x))h_{\theta}(x)*x\\
+&=&(y^{(i)}*(1-h_{\theta}(x))+(1-y^{(i)})*h_{\theta}(x))*x\\
+&=&(h_{\theta}(x)-y^{(i)})*x
+\end{eqnarray*}
+
+$$
+\frac{\partial J(w)}{\partial w_j}=\sum^n_{i=1}x^{(i)}_j(h(x^{(i)})-y^{(i)})
+$$

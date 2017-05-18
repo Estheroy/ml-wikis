@@ -1,7 +1,0 @@
-## The idea of Bayes net
-
-A **Bayesian network**, or by other names, **Bayes network**, **belief network**, **Bayes model or probabilistic directed acyclic graphical model** is a probabilistic graphical model (a type of statistical model) that represents a set of random variables and their conditional dependencies via a directed acyclic graph (DAG). For example, a Bayesian network could represent the probabilistic relationships between diseases and symptoms. Given symptoms, the network can be used to compute the probabilities of the presence of various diseases.
-
-A Bayesian network is a **directed acyclic graph** where nodes correspond to random variables and arcs between nodes represent probabilistic dependencies. 
-
-From a simplifying perspective, an arc pointing from node A to node B can be perceived as A causing or influencing B. Each node in the network is annotated with a conditional probability table, that represents the conditional probability of the variable given the values of its parents in the graph. For nodes that have no parents, the corresponding table will simply contain the prior probabilities for that variable. A Bayesian Network is a compact representation of the full joint probability of the random variables in the graph. The joint probability of $$n$$ variables can be expressed using a table whose size is of order $$O(2n)$$. In a Bayesian Network, the joint probability is expressed in factorized form, and conditional independencies are exploited in order to simplify the posterior probability expressions.
